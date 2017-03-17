@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>{% block naslov %}{% endblock %}</title>
+        <link rel="stylesheet" href="/assets/css/style.css">
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="/" class="{% block povezava_doma %}{% endblock %}">Doma</a>
+                        </li>
+                        <li>
+                            <a href="/omeni" class="{% block povezava_omeni %}{% endblock %}">O meni</a>
+                        </li>
+                        <li>
+                            <a href="/kontakt" class="{% block povezava_kontakt %}{% endblock %}">Kontakt</a>
+                        </li>
+                    </ul>
+                </td>
+                <td>
+                    {% block vsebina %}{% endblock %}
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

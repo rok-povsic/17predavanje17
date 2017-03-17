@@ -27,10 +27,20 @@ class BaseHandler(webapp2.RequestHandler):
         return self.response.out.write(template.render(params))
 
 
-class MainHandler(BaseHandler):
+class DomaHandler(BaseHandler):
     def get(self):
-        return self.render_template("hello.html")
+        return self.render_template("doma.html")
+
+class OMeniHandler(BaseHandler):
+    def get(self):
+        return self.render_template("omeni.html")
+
+class KontaktHandler(BaseHandler):
+    def get(self):
+        return self.render_template("kontakt.html")
 
 app = webapp2.WSGIApplication([
-    webapp2.Route('/', MainHandler),
+    webapp2.Route('/', DomaHandler),
+    webapp2.Route('/omeni', OMeniHandler),
+    webapp2.Route('/kontakt', KontaktHandler),
 ], debug=True)
